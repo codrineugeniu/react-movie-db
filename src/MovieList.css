@@ -4,8 +4,12 @@
 
 .movies-container {
   padding: 10px 0;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .movie-item {
   width: 30%;
+  flex: 1 1 250px;
+  margin: 10px;
 }
