@@ -5,11 +5,11 @@ import SearchBar from './components/SearchBar'
 import './MovieList.css'
 
 function MovieList(props) {
-  const { movies = [] } = props
+  const { movies = [], addMovie, deleteMovie } = props
   return (
     <div className="movie-list">
       <div className="search-container">
-        <SearchBar />
+        <SearchBar addMovie={addMovie} />
       </div>
       <div className="movies-container">
         {movies.length > 0
@@ -19,6 +19,7 @@ function MovieList(props) {
                 year={movie.year}
                 description={movie.description}
                 key={movie.id}
+                deleteMovie={deleteMovie}
               />
             ))
           : 'No movies found. Perhaps add one?'}
