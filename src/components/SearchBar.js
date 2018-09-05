@@ -16,17 +16,19 @@ class SearchBar extends Component {
 
   onInputChange = event => {
     const { value } = event.target
+    event.preventDefault()
     this.setState({
       searchTerm: value
     })
   }
 
   addMovie = movie => {
-    console.log(movie)
+    this.props.addMovie(movie)
   }
 
   search = event => {
     event.preventDefault()
+    this.setState({ results: [] })
     searchMovie(this.state.searchTerm).then(response => {
       this.setState({
         results: [response.data]
@@ -41,7 +43,7 @@ class SearchBar extends Component {
           label="Add a new movie"
           margin="normal"
           value={searchTerm}
-          fullWidth
+          className="search-input"
           onChange={this.onInputChange}
         />
         <IconButton onClick={this.search}>
