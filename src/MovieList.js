@@ -16,10 +16,12 @@ function MovieList(props) {
           ? movies.map(movie => (
               <MovieItem
                 title={movie.name}
+                url={movie.poster}
                 year={movie.year}
-                description={movie.description}
+                plot={movie.plot}
                 key={movie.id}
                 deleteMovie={deleteMovie}
+                id={movie.id}
               />
             ))
           : 'No movies found. Perhaps add one?'}

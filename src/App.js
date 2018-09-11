@@ -17,8 +17,14 @@ class App extends Component {
       this.setState({ movies: response.data })
     })
   }
-  deleteMovie = movie => {
-    console.log(movie)
+  deleteMovie = id => {
+    deleteMovie(id).then(() => {
+      const { movies } = this.state
+      const filtered = movies.filter(m => m.id !== id)
+      this.setState({
+        movies: filtered
+      })
+    })
   }
   addMovie = movie => {
     const newMovie = {
