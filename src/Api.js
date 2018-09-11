@@ -20,6 +20,7 @@ export function createMovie(movie) {
   return axios.post(MovieApiUrl, movie)
 }
 // DELETE /movie/<movie_id>
-export function deleteMovie(movie) {
-  return axios.delete(`${MovieApiUrl}/${movie.id}`)
+export function deleteMovie(id) {
+  console.log('API method hit')
+  return axios.delete(`${MovieApiUrl}/${id}`)
 }
