@@ -2,8 +2,8 @@ import axios from 'axios'
 
 import { ImdbApiKey } from './AppConfig'
 
-const ImdbApiUrl = 'http://imdbapi.net/api'
-const MovieApiUrl = 'http://localhost:5000/movies'
+const ImdbApiUrl = 'http://imdbapi.net/api' //'http://imdbapi.net/api'
+const MovieApiUrl = '/api/movies' //'http://localhost:5000/movies'
 
 export function getMovies() {
   return axios.get(MovieApiUrl)

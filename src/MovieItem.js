@@ -6,6 +6,7 @@ import CardMedia from '@material-ui/core/CardMedia'
 import CardActions from '@material-ui/core/CardActions'
 import Button from '@material-ui/core/Button'
 import Icon from '@material-ui/core/Icon'
+import RatingContainer from './components/RatingContainer'
 
 const Placeholder = () => {
   return (
@@ -16,7 +17,7 @@ const Placeholder = () => {
 }
 
 const MovieItem = props => {
-  const { title, year, plot, url = '', deleteMovie } = props
+  const { title, year, plot, rating, url = '', deleteMovie } = props
 
   return (
     <Card className="movie-item">
@@ -36,6 +37,7 @@ const MovieItem = props => {
         </Typography>
         <Typography color="textSecondary">{year}</Typography>
         <Typography component="p">{plot}</Typography>
+        <RatingContainer rating={rating} />
       </CardContent>
       <CardActions>
         <Button onClick={() => deleteMovie(props.id)}>
